@@ -187,8 +187,8 @@ ul { list-style: none; }
   border: none;
   cursor: pointer;
   padding: 8px;
-position: relative;
-z-index: 120;
+  position: relative;
+  z-index: 120;
 }
 .hamburger span {
   display: block;
@@ -201,6 +201,7 @@ z-index: 120;
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* =====================================================
    HERO
    ===================================================== */
@@ -690,7 +691,6 @@ z-index: 120;
   height: 100%;
   border: 0;
   display: block;
-  
 }
 
 /* =====================================================
@@ -786,7 +786,6 @@ z-index: 120;
 }
 
 @media (max-width: 768px) {
-
   .hamburger {
     display: flex;
   }
@@ -796,18 +795,15 @@ z-index: 120;
     top: 88px;
     left: 0;
     right: 0;
-
+    z-index: 110;
     padding: 32px 24px 40px;
-
     background: rgba(10,10,10,.98);
     backdrop-filter: blur(12px);
-
+    -webkit-backdrop-filter: blur(12px);
     transform: translateY(-110%);
     opacity: 0;
     visibility: hidden;
-
     transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
-
     border-bottom: 1px solid rgba(255,255,255,.07);
   }
 
@@ -833,7 +829,6 @@ z-index: 120;
     text-align: center;
   }
 
-}
   .hero__title {
     font-size: clamp(2.8rem, 10vw, 4rem);
     line-height: .95;
@@ -848,7 +843,11 @@ z-index: 120;
     flex-direction: column;
     align-items: flex-start;
   }
-  .hero__actions .btn { width: 100%; justify-content: center; }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
   .cards { grid-template-columns: 1fr; }
   .team--3 { grid-template-columns: 1fr; }
