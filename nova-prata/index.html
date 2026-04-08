@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse Jiu-Jitsu | Nova Prata – RS</title>
+<meta name="description" content="Pulse Jiu-Jitsu Nova Prata — Academia de Jiu-Jitsu. Turmas Kids, Adulto, Nogi e Baby. Rua João Pessoa, 56 – Centro. Agende sua aula gratuita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --black:#0d0d0d;
+  --dark:#111;
+  --card:#161616;
+  --border:rgba(255,255,255,0.07);
+  --white:#ffffff;
+  --off:#cccccc;
+  --muted:rgba(255,255,255,0.42);
+  --green:#b2ff00;
+  --green2:#caff3c;
+  --green-dim:rgba(178,255,0,0.08);
+  --green-border:rgba(178,255,0,0.25);
+}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 48px;
+  background:rgba(13,13,13,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-logo{
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;
+}
+
+.nav-p{
+  width:36px;height:36px;
+  background:var(--green);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:20px;
+  color:var(--black);letter-spacing:-1px;
+}
+
+.nav-name{
+  display:flex;flex-direction:column;line-height:1.1;
+}
+
+.nav-pulse{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:17px;letter-spacing:0.08em;
+}
+
+.nav-city{
+  font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--green);
+  font-weight:400;
+}
+
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:13px;letter-spacing:0.06em;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+
+.nav-cta{
+  background:var(--green);color:var(--black);
+  padding:9px 22px;border-radius:2px;
+  text-decoration:none;font-size:13px;
+  font-weight:700;letter-spacing:0.06em;
+  font-family:'Barlow Condensed',sans-serif;
+  text-transform:uppercase;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--green2);transform:translateY(-1px)}
+
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:.3s}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:120px 48px 80px;
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+
+.hero-noise{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%,rgba(178,255,0,0.04) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 50% at 80% 80%,rgba(178,255,0,0.03) 0%,transparent 60%);
+  background-color:var(--black);
+}
+
+/* diagonal slash bg */
+.hero-slash{
+  position:absolute;bottom:-10%;right:-5%;
+  width:55%;height:120%;
+  background:rgba(178,255,0,0.022);
+  transform:skewX(-8deg);
+  pointer-events:none;
+}
+
+.hero-content{position:relative;z-index:2;max-width:900px}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-dim);
+  border:1px solid var(--green-border);
+  color:var(--green);
+  font-size:11px;letter-spacing:0.22em;
+  text-transform:uppercase;
+  padding:6px 18px;border-radius:100px;
+  margin-bottom:32px;
+  animation:fadeUp .7s ease both;
+}
+
+.hero-badge::before{
+  content:'';width:6px;height:6px;
+  border-radius:50%;background:var(--green);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(1.3)}
+}
+
+.hero-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:clamp(64px,12vw,148px);
+  line-height:0.88;
+  letter-spacing:-0.01em;
+  text-transform:uppercase;
+  animation:fadeUp .7s .1s ease both;
+}
+
+.hero-title .green{color:var(--green)}
+.hero-title .stroke{
+  -webkit-text-stroke:2px var(--white);
+  color:transparent;
+}
+
+.hero-sub{
+  max-width:500px;margin:28px auto 0;
+  color:var(--muted);font-size:17px;line-height:1.7;
+  animation:fadeUp .7s .2s ease both;
+}
+
+.hero-actions{
+  display:flex;gap:14px;justify-content:center;
+  margin-top:40px;flex-wrap:wrap;
+  animation:fadeUp .7s .3s ease both;
+}
+
+.btn-primary{
+  background:var(--green);color:var(--black);
+  padding:15px 36px;border-radius:2px;
+  text-decoration:none;font-weight:700;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
+  transition:background .2s,transform .15s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--green2);transform:translateY(-2px)}
+
+.btn-ghost{
+  border:1px solid rgba(255,255,255,0.2);
+  color:var(--muted);
+  padding:15px 36px;border-radius:2px;
+  text-decoration:none;font-size:14px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
+  transition:border-color .2s,color .2s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.45);color:var(--white)}
+
+.hero-stats{
+  display:flex;gap:0;justify-content:center;
+  margin-top:72px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  overflow:hidden;
+  max-width:520px;
+  margin-left:auto;margin-right:auto;
+  animation:fadeUp .7s .4s ease both;
+}
+
+.stat{
+  flex:1;padding:24px 20px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat:last-child{border-right:none}
+
+.stat-n{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:44px;
+  color:var(--green);line-height:1;
+}
+
+.stat-l{
+  font-size:10px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--muted);
+  margin-top:4px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── SECTION BASE ── */
+.section-label{
+  font-size:11px;letter-spacing:0.25em;
+  text-transform:uppercase;color:var(--green);
+  margin-bottom:12px;
+}
+
+.section-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;text-transform:uppercase;
+  font-size:clamp(36px,5vw,64px);
+  line-height:0.95;
+}
+
+.section-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.section-header p{color:var(--muted);margin-top:14px;font-size:16px;line-height:1.7}
+
+/* ── SOBRE ── */
+#sobre{
+  padding:100px 48px;
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+
+.sobre-text p{
+  color:var(--muted);font-size:16px;
+  margin-bottom:18px;line-height:1.75;
+}
+
+.sobre-text strong{color:var(--white);font-weight:500}
+
+.sobre-link{
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--green);text-decoration:none;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:14px;letter-spacing:0.1em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--green-border);
+  padding-bottom:2px;
+  transition:border-color .2s;
+  margin-top:8px;
+}
+.sobre-link:hover{border-color:var(--green)}
+
+.sobre-visual{
+  position:relative;
+}
+
+.sobre-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:48px 40px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+
+.sobre-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--green);
+}
+
+.sobre-card-p{
+  width:72px;height:72px;
+  background:var(--green);border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:38px;
+  color:var(--black);
+  margin:0 auto 20px;
+}
+
+.sobre-card-city{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:56px;
+  text-transform:uppercase;line-height:1;
+  color:var(--white);
+}
+
+.sobre-card-city span{color:var(--green)}
+
+.sobre-card-since{
+  font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--muted);
+  margin-top:6px;margin-bottom:28px;
+}
+
+.sobre-insta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-dim);border:1px solid var(--green-border);
+  color:var(--green);padding:10px 20px;border-radius:2px;
+  text-decoration:none;font-size:13px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  transition:background .2s;
+}
+.sobre-insta:hover{background:rgba(178,255,0,0.14)}
+
+/* ── TURMAS ── */
+#turmas{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:100px 48px;
+}
+
+.turmas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1px;background:var(--border);
+  max-width:1140px;margin:0 auto;
+  border:1px solid var(--border);border-radius:3px;overflow:hidden;
+}
+
+.turma-card{
+  background:var(--black);
+  padding:40px 32px;
+  position:relative;
+  transition:background .25s;
+  cursor:default;
+}
+
+.turma-card:hover{background:#141414}
+
+.turma-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--green);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s;
+}
+.turma-card:hover::after{transform:scaleX(1)}
+
+.turma-icon{font-size:30px;margin-bottom:18px}
+
+.turma-age{
+  font-size:10px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--green);
+  margin-bottom:8px;
+}
+
+.turma-card h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:28px;
+  text-transform:uppercase;letter-spacing:0.02em;
+  margin-bottom:12px;
+}
+
+.turma-card p{color:var(--muted);font-size:14px;line-height:1.65}
+
+.turma-items{
+  margin-top:18px;list-style:none;
+  display:flex;flex-direction:column;gap:7px;
+}
+.turma-items li{
+  font-size:13px;color:var(--muted);
+  display:flex;align-items:center;gap:8px;
+}
+.turma-items li::before{
+  content:'';width:6px;height:6px;
+  border-radius:50%;background:var(--green);
+  flex-shrink:0;
+}
+
+/* ── HORÁRIOS ── */
+#horarios{
+  padding:100px 48px;
+  max-width:1000px;margin:0 auto;
+}
+
+.table-wrap{margin-top:56px;overflow-x:auto}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+
+th{
+  background:var(--dark);
+  padding:13px 10px;text-align:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:13px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--border);
+}
+
+th.th-hora{color:var(--green)}
+
+td{
+  padding:13px 10px;text-align:center;
+  border:1px solid var(--border);
+  color:var(--muted);font-size:12px;
+  letter-spacing:0.04em;
+}
+
+td.hora{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:20px;
+  color:var(--green);background:rgba(178,255,0,0.04);
+  text-align:center;white-space:nowrap;
+}
+
+td.filled{
+  background:rgba(178,255,0,0.06);
+  color:var(--white);font-weight:500;
+}
+
+td.nogi{
+  background:rgba(178,255,0,0.03);
+  color:var(--green);font-style:italic;
+}
+
+.legend{
+  display:flex;gap:20px;flex-wrap:wrap;
+  margin-top:20px;font-size:12px;
+  color:var(--muted);letter-spacing:0.04em;
+}
+
+.legend span{display:flex;align-items:center;gap:6px}
+.legend span::before{
+  content:'';width:8px;height:8px;
+  border-radius:50%;background:var(--green);
+}
+
+.schedule-note{
+  margin-top:16px;font-size:12px;
+  color:var(--muted);font-style:italic;
+}
+
+/* ── BENEFÍCIOS ── */
+#beneficios{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  padding:100px 48px;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;max-width:1140px;margin:60px auto 0;
+}
+
+.benefit{
+  background:var(--black);
+  border:1px solid var(--border);
+  border-radius:3px;
+  padding:32px 24px;
+  transition:border-color .25s,transform .25s;
+}
+.benefit:hover{border-color:var(--green-border);transform:translateY(-3px)}
+
+.benefit-icon{font-size:26px;margin-bottom:14px}
+
+.benefit h4{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:16px;
+  text-transform:uppercase;letter-spacing:0.05em;
+  margin-bottom:8px;
+}
+
+.benefit p{color:var(--muted);font-size:13px;line-height:1.6}
+
+/* ── CTA STRIP ── */
+#cta{
+  padding:0 48px 100px;
+}
+
+.cta-inner{
+  max-width:1140px;margin:0 auto;
+  background:var(--green);
+  border-radius:3px;
+  padding:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;
+  position:relative;overflow:hidden;
+}
+
+.cta-inner::before{
+  content:'PULSE';
+  position:absolute;right:-20px;top:50%;
+  transform:translateY(-50%);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:160px;
+  color:rgba(0,0,0,0.06);
+  line-height:1;pointer-events:none;
+  white-space:nowrap;
+}
+
+.cta-text .section-label{color:rgba(0,0,0,0.5)}
+
+.cta-text h2{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:clamp(32px,4vw,56px);
+  text-transform:uppercase;line-height:0.95;
+  color:var(--black);margin:8px 0 12px;
+}
+
+.cta-text p{color:rgba(0,0,0,0.6);max-width:420px;font-size:15px}
+
+.cta-actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+
+.btn-dark{
+  background:var(--black);color:var(--green);
+  padding:15px 32px;border-radius:2px;
+  text-decoration:none;font-weight:700;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
+  transition:background .2s;
+  text-align:center;
+}
+.btn-dark:hover{background:#1a1a1a}
+
+.btn-outline-dark{
+  border:2px solid rgba(0,0,0,0.25);
+  color:rgba(0,0,0,0.7);
+  padding:13px 32px;border-radius:2px;
+  text-decoration:none;font-size:14px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
+  transition:border-color .2s,color .2s;
+  text-align:center;
+}
+.btn-outline-dark:hover{border-color:rgba(0,0,0,0.6);color:var(--black)}
+
+/* ── CONTATO ── */
+#contato{
+  padding:100px 48px;
+  max-width:1140px;margin:0 auto;
+}
+
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;margin-top:60px;align-items:start;
+}
+
+label{
+  display:block;font-size:11px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+
+input,select,textarea{
+  width:100%;
+  background:var(--dark);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:13px 16px;
+  color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:15px;font-weight:300;
+  outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}
+select option{background:#1a1a1a}
+textarea{resize:vertical;min-height:90px}
+
+.form-group{margin-bottom:18px}
+
+.form-submit{
+  width:100%;
+  background:var(--green);color:var(--black);
+  border:none;padding:15px;border-radius:2px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:16px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;
+  margin-top:4px;
+}
+.form-submit:hover{background:var(--green2)}
+
+.contact-info{display:flex;flex-direction:column;gap:32px}
+
+.info-block{display:flex;gap:18px;align-items:flex-start}
+
+.info-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:var(--green-dim);border:1px solid var(--green-border);
+  border-radius:2px;display:grid;place-items:center;font-size:18px;
+}
+
+.info-label{
+  font-size:10px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--green);margin-bottom:4px;
+}
+
+.info-val{color:var(--white);font-size:15px;line-height:1.5}
+.info-val a{color:var(--white);text-decoration:none}
+.info-val a:hover{color:var(--green)}
+
+.profs-list{margin-top:32px}
+
+.profs-label{
+  font-size:11px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+}
+
+.prof-item{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.prof-item:last-child{border-bottom:none}
+
+.prof-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--green);
+  display:grid;place-items:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:16px;color:var(--black);
+  flex-shrink:0;
+}
+
+.prof-name{font-size:15px;font-weight:500}
+.prof-role{font-size:12px;color:var(--muted);letter-spacing:0.04em}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  padding:48px;
+}
+
+.footer-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+}
+
+.footer-brand{display:flex;align-items:center;gap:12px}
+
+.footer-p{
+  width:32px;height:32px;background:var(--green);border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:17px;color:var(--black);
+}
+
+.footer-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:15px;letter-spacing:0.06em;
+}
+
+.footer-city{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--green)}
+
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+
+.footer-copy{font-size:12px;color:var(--muted)}
+
+/* ── DIVIDER ── */
+.slash-divider{
+  height:3px;background:var(--green);
+  max-width:60px;margin:20px 0;
+}
+
+.section-header .slash-divider{margin:20px auto}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .nav-links{display:none}
+
+  .hamburger{display:flex}
+
+  #hero{padding:100px 24px 60px}
+  #sobre{grid-template-columns:1fr;gap:48px;padding:72px 24px}
+  #turmas{padding:72px 24px}
+  #horarios{padding:72px 24px}
+  #beneficios{padding:72px 24px}
+  #cta{padding:0 24px 72px}
+  .cta-inner{flex-direction:column;text-align:center;padding:48px 32px}
+  .cta-text p{max-width:100%}
+  .cta-actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  #contato{padding:72px 24px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  footer{padding:32px 24px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .hero-stats{flex-wrap:wrap}
+  .nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <div class="nav-p">P</div>
+    <div class="nav-name">
+      <span class="nav-pulse">Pulse Jiu-Jitsu</span>
+      <span class="nav-city">Nova Prata · RS</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#turmas">Turmas</a></li>
+    <li><a href="#horarios">Horários</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+
+  <a class="nav-cta" href="https://wa.me/5554996979829?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Jiu-Jitsu%20Nova%20Prata!" target="_blank">Aula Grátis</a>
+
+  <button class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-slash"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Nova Prata · RS · Academia de Jiu-Jitsu</div>
+
+    <h1 class="hero-title">
+      <span class="green">PULSE</span><br>
+      <span class="stroke">JIU-JITSU</span><br>
+      NOVA PRATA
+    </h1>
+
+    <p class="hero-sub">Saúde, confiança e técnica no tatame.<br>Turmas a partir de 6 anos. Venha treinar com a gente.</p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5554996979829?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Jiu-Jitsu%20Nova%20Prata!" target="_blank">
+        🥋 Agende sua Aula Grátis
+      </a>
+      <a class="btn-ghost" href="#turmas">Ver Turmas</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Professores</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">4</div>
+        <div class="stat-l">Turmas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">6+</div>
+        <div class="stat-l">Dias p/ semana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-text">
+    <p class="section-label">Nossa história</p>
+    <h2 class="section-title">Pulse<br><span style="color:var(--green)">Nova Prata</span></h2>
+    <div class="slash-divider"></div>
+    <p>A Pulse Jiu-Jitsu chega em <strong>Nova Prata</strong> levando a mesma essência da academia mãe de Veranópolis — arte suave, alto nível técnico e compromisso com a transformação de cada aluno dentro e fora do tatame.</p>
+    <p>Com uma equipe dedicada e um espaço pensado para o desenvolvimento de crianças e adultos, a Pulse NP é o lugar certo para quem quer começar ou evoluir no Jiu-Jitsu na Serra Gaúcha.</p>
+    <p><strong>Rua João Pessoa, 56 — Centro, Nova Prata/RS.</strong></p>
+    <a class="sobre-link" href="https://instagram.com/pulsejiujitsunp" target="_blank">
+      📸 @pulsejiujitsunp →
+    </a>
+  </div>
+
+  <div class="sobre-visual">
+    <div class="sobre-card">
+      <div class="sobre-card-p">P</div>
+      <div class="sobre-card-city">NOVA<br><span>PRATA</span></div>
+      <div class="sobre-card-since">Pulse Jiu-Jitsu · RS</div>
+      <a class="sobre-insta" href="https://instagram.com/pulsejiujitsunp" target="_blank">
+        📸 @pulsejiujitsunp
+      </a>
+
+      <div class="profs-list" style="margin-top:32px">
+        <div class="profs-label">Equipe de professores</div>
+        <div class="prof-item">
+          <div class="prof-avatar">FD</div>
+          <div>
+            <div class="prof-name">Felipe Dall Agnol</div>
+            <div class="prof-role">Faixa Preta · Professor</div>
+          </div>
+        </div>
+        <div class="prof-item">
+          <div class="prof-avatar" style="background:#4a2c00;color:#c8a050;">LF</div>
+          <div>
+            <div class="prof-name">Luiz Figueira</div>
+            <div class="prof-role">Faixa Marrom · Professor</div>
+          </div>
+        </div>
+        <div class="prof-item">
+          <div class="prof-avatar">MR</div>
+          <div>
+            <div class="prof-name">Marcos Rigo</div>
+            <div class="prof-role">Faixa Preta · Professor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TURMAS -->
+<section id="turmas">
+  <div class="section-header">
+    <p class="section-label">O que oferecemos</p>
+    <h2 class="section-title">Nossas<br><span style="color:var(--green)">Turmas</span></h2>
+    <div class="slash-divider"></div>
+    <p>Turmas organizadas por faixa etária e nível para o melhor desenvolvimento de cada aluno.</p>
+  </div>
+
+  <div class="turmas-grid">
+    <div class="turma-card">
+      <div class="turma-icon">🥋</div>
+      <div class="turma-age">6 a 9 anos</div>
+      <h3>Kids 1</h3>
+      <p>Para crianças de 6 a 9 anos. Desenvolvimento motor, disciplina, respeito e confiança no tatame com metodologia progressiva e lúdica.</p>
+      <ul class="turma-items">
+        <li>Metodologia lúdica e progressiva</li>
+        <li>Foco em disciplina e respeito</li>
+        <li>Turmas Seg, Ter, Qua e Qui</li>
+      </ul>
+    </div>
+
+    <div class="turma-card">
+      <div class="turma-icon">🏆</div>
+      <div class="turma-age">10 a 13 anos</div>
+      <h3>Kids 2</h3>
+      <p>Para crianças e pré-adolescentes de 10 a 13 anos. Técnica mais apurada, sparring supervisionado e preparação para campeonatos.</p>
+      <ul class="turma-items">
+        <li>Técnica avançada para a faixa etária</li>
+        <li>Sparring supervisionado</li>
+        <li>Turmas Seg, Ter, Qua e Qui</li>
+      </ul>
+    </div>
+
+    <div class="turma-card">
+      <div class="turma-icon">💪</div>
+      <div class="turma-age">A partir de 13 anos</div>
+      <h3>Adulto</h3>
+      <p>Para iniciantes e avançados. Técnica, condicionamento e evolução constante. Treinos pela manhã e à noite, de segunda a sexta.</p>
+      <ul class="turma-items">
+        <li>Sem experiência necessária</li>
+        <li>Horários flexíveis manhã e noite</li>
+        <li>Preparação para competições</li>
+      </ul>
+    </div>
+
+    <div class="turma-card">
+      <div class="turma-icon">🤼</div>
+      <div class="turma-age">Adulto · sem kimono</div>
+      <h3>Nogi</h3>
+      <p>Jiu-Jitsu sem kimono — mais dinâmico e intenso. Ideal para quem quer complementar o treino ou explorar um estilo diferente de luta.</p>
+      <ul class="turma-items">
+        <li>Treino dinâmico e intenso</li>
+        <li>Sex e Sáb (manhã)</li>
+        <li>Qua e Sex à noite</li>
+      </ul>
+    </div>
+
+    <div class="turma-card">
+      <div class="turma-icon">👶</div>
+      <div class="turma-age">4 a 5 anos · Sábados</div>
+      <h3>Turma Baby</h3>
+      <p>Para os pequenos de 4 a 5 anos! Aulas aos sábados, com foco em coordenação motora, socialização e os primeiros passos no tatame.</p>
+      <ul class="turma-items">
+        <li>Sábados a partir das 10h</li>
+        <li>Aula experimental gratuita</li>
+        <li>Ambiente acolhedor e divertido</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios">
+  <div class="section-header">
+    <p class="section-label">Quando treinar</p>
+    <h2 class="section-title">Quadro de<br><span style="color:var(--green)">Horários</span></h2>
+    <div class="slash-divider"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="th-hora">Horário</th>
+          <th>SEG</th>
+          <th>TER</th>
+          <th>QUA</th>
+          <th>QUI</th>
+          <th>SEX</th>
+          <th>SÁB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="hora">06:30</td>
+          <td class="filled">Adulto</td>
+          <td></td>
+          <td class="filled">Adulto</td>
+          <td></td>
+          <td class="nogi">Nogi</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">10:00</td>
+          <td></td>
+          <td class="filled">Kids 1/2</td>
+          <td></td>
+          <td class="filled">Kids 1/2</td>
+          <td></td>
+          <td class="filled">Baby</td>
+        </tr>
+        <tr>
+          <td class="hora">11:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="filled">Adulto</td>
+        </tr>
+        <tr>
+          <td class="hora">12:00</td>
+          <td class="filled">Adulto</td>
+          <td></td>
+          <td class="filled">Adulto</td>
+          <td></td>
+          <td class="nogi">Nogi</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">18:30</td>
+          <td class="filled">Kids 1</td>
+          <td class="filled">Kids 2</td>
+          <td class="filled">Kids 1</td>
+          <td class="filled">Kids 2</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">19:30</td>
+          <td class="filled">Adulto</td>
+          <td class="filled">Adulto</td>
+          <td class="nogi">Nogi</td>
+          <td class="filled">Adulto</td>
+          <td class="nogi">Nogi</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <span>Kids 1: 06 a 09 anos</span>
+    <span>Kids 2: 10 a 13 anos</span>
+    <span>Baby: 4 a 5 anos · Sábados 10h</span>
+  </div>
+  <p class="schedule-note">Horários sujeitos a alteração. Confirme no WhatsApp ou Instagram.</p>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section id="beneficios">
+  <div class="section-header">
+    <p class="section-label">Por que praticar?</p>
+    <h2 class="section-title">Benefícios do<br><span style="color:var(--green)">Jiu-Jitsu</span></h2>
+    <div class="slash-divider"></div>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">💪</div>
+      <h4>Condicionamento</h4>
+      <p>Resistência, força e flexibilidade desenvolvidos de forma natural e progressiva.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🧠</div>
+      <h4>Disciplina Mental</h4>
+      <p>Foco, concentração e resiliência que se refletem em todas as áreas da vida.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🛡️</div>
+      <h4>Defesa Pessoal</h4>
+      <p>Técnicas eficazes e reais para situações do cotidiano.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">⭐</div>
+      <h4>Autoconfiança</h4>
+      <p>Supere desafios no tatame e ganhe confiança para enfrentar a vida.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">😌</div>
+      <h4>Controle Emocional</h4>
+      <p>Gerencie o estresse e a pressão com mais calma e equilíbrio.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🤝</div>
+      <h4>Comunidade</h4>
+      <p>Faça parte de uma família unida e apaixonada pelo esporte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <p class="section-label">Sem custo, sem compromisso</p>
+      <h2>Sua Primeira Aula<br>É Gratuita</h2>
+      <p>Entre em contato pelo WhatsApp e agende sua aula experimental. Venha conhecer o tatame e a equipe da Pulse Nova Prata.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn-dark" href="https://wa.me/5554996979829?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Jiu-Jitsu%20Nova%20Prata!" target="_blank">
+        💬 WhatsApp
+      </a>
+      <a class="btn-outline-dark" href="https://instagram.com/pulsejiujitsunp" target="_blank">
+        📸 Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="section-header">
+    <p class="section-label">Fale conosco</p>
+    <h2 class="section-title">Agende sua<br><span style="color:var(--green)">Aula Gratuita</span></h2>
+    <div class="slash-divider"></div>
+    <p>Pronto para começar? Preencha o formulário e entraremos em contato pelo WhatsApp para confirmar o horário.</p>
+  </div>
+
+  <div class="contact-grid">
+    <form onsubmit="handleForm(event)">
+      <div class="form-group">
+        <label>Seu nome</label>
+        <input type="text" id="nome" placeholder="Como você se chama?" required>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp</label>
+        <input type="tel" id="wpp" placeholder="(54) 9 9999-9999" required>
+      </div>
+      <div class="form-group">
+        <label>Qual turma te interessa?</label>
+        <select id="turma" required>
+          <option value="" disabled selected>Selecione...</option>
+          <option>Baby (4–5 anos)</option>
+          <option>Kids 1 (6–9 anos)</option>
+          <option>Kids 2 (10–13 anos)</option>
+          <option>Adulto</option>
+          <option>Nogi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem (opcional)</label>
+        <textarea id="msg" placeholder="Alguma dúvida ou observação?"></textarea>
+      </div>
+      <button class="form-submit" type="submit">Quero minha aula grátis →</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-block">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Endereço</div>
+          <div class="info-val">Rua João Pessoa, 56<br>Centro – Nova Prata / RS</div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">📱</div>
+        <div>
+          <div class="info-label">WhatsApp</div>
+          <div class="info-val">
+            <a href="https://wa.me/5554996979829" target="_blank">(54) 9 9697-9829</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">📸</div>
+        <div>
+          <div class="info-label">Instagram</div>
+          <div class="info-val">
+            <a href="https://instagram.com/pulsejiujitsunp" target="_blank">@pulsejiujitsunp</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Horário de funcionamento</div>
+          <div class="info-val">Seg–Sex: 06:30 – 21:00<br>Sábado: 10:00 – 12:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-p">P</div>
+      <div>
+        <div class="footer-name">Pulse Jiu-Jitsu</div>
+        <div class="footer-city">Nova Prata · RS</div>
+      </div>
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#turmas">Turmas</a></li>
+      <li><a href="#horarios">Horários</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://pulsejiujitsu.com.br" target="_blank">Pulse Veranópolis</a></li>
+    </ul>
+
+    <div class="footer-copy">© 2026 Pulse Jiu-Jitsu Nova Prata</div>
+  </div>
+</footer>
+
+<script>
+function handleForm(e){
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const turma = document.getElementById('turma').value;
+  const msg = document.getElementById('msg').value;
+  const text = encodeURIComponent(
+    `Olá! Meu nome é ${nome} e tenho interesse na turma: ${turma}.${msg ? ' ' + msg : ''} Gostaria de agendar uma aula experimental na Pulse Jiu-Jitsu Nova Prata!`
+  );
+  window.open(`https://wa.me/5554996979829?text=${text}`, '_blank');
+}
+</script>
+
+</body>
+</html>
