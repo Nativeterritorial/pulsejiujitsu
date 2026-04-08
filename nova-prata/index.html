@@ -114,10 +114,26 @@ nav{
 
 .hero-noise{
   position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 30%,rgba(178,255,0,0.04) 0%,transparent 65%),
-    radial-gradient(ellipse 50% 50% at 80% 80%,rgba(178,255,0,0.03) 0%,transparent 60%);
-  background-color:var(--black);
+  background:var(--black);
+}
+
+.hero-video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0.25;
+  z-index:0;
+}
+
+.hero-video-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(13,13,13,0.55) 0%,
+    rgba(13,13,13,0.3) 50%,
+    rgba(13,13,13,0.9) 100%
+  );
+  z-index:1;
 }
 
 /* diagonal slash bg */
@@ -728,7 +744,7 @@ footer{
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">
-    <div class="nav-p">P</div>
+    <img src="logo.png" alt="Pulse Jiu-Jitsu" style="height:38px;width:38px;object-fit:contain;border-radius:50%;">
     <div class="nav-name">
       <span class="nav-pulse">Pulse Jiu-Jitsu</span>
       <span class="nav-city">Nova Prata · RS</span>
@@ -752,6 +768,10 @@ footer{
 <!-- HERO -->
 <section id="hero">
   <div class="hero-noise"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
   <div class="hero-slash"></div>
   <div class="hero-content">
     <div class="hero-badge">Nova Prata · RS · Academia de Jiu-Jitsu</div>
@@ -804,7 +824,7 @@ footer{
 
   <div class="sobre-visual">
     <div class="sobre-card">
-      <div class="sobre-card-p">P</div>
+      <img src="logo.png" alt="Pulse Jiu-Jitsu Nova Prata" style="width:100px;height:100px;object-fit:contain;border-radius:50%;margin:0 auto 20px;display:block;">
       <div class="sobre-card-city">NOVA<br><span>PRATA</span></div>
       <div class="sobre-card-since">Pulse Jiu-Jitsu · RS</div>
       <a class="sobre-insta" href="https://instagram.com/pulsejiujitsunp" target="_blank">
@@ -1165,7 +1185,7 @@ footer{
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-p">P</div>
+      <img src="logo.png" alt="Pulse" style="width:36px;height:36px;object-fit:contain;border-radius:50%;">
       <div>
         <div class="footer-name">Pulse Jiu-Jitsu</div>
         <div class="footer-city">Nova Prata · RS</div>
