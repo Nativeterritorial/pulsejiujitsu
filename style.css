@@ -789,6 +789,56 @@ ul { list-style: none; }
 .whatsapp-fab svg { width: 30px; height: 30px; color: white; fill: white; }
 
 /* =====================================================
+   HERO PROOFS
+   ===================================================== */
+.hero__proofs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero__proof {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.82);
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   MINI CTA
+   ===================================================== */
+.mini-cta {
+  background: linear-gradient(180deg, var(--black2) 0%, var(--black) 100%);
+  padding: 72px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.mini-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.mini-cta .section-title {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.mini-cta__text {
+  color: rgba(255,255,255,.68);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =====================================================
    RESPONSIVE
    ===================================================== */
 @media (min-width: 1025px) {
@@ -871,6 +921,21 @@ ul { list-style: none; }
   }
 
   .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__proofs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mini-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mini-cta__inner .btn {
     width: 100%;
     justify-content: center;
   }
