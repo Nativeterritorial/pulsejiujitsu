@@ -16,6 +16,8 @@
   --white:      #fcfcfc;
   --ink:        #131416;
   --ink-soft:   #4c4f54;
+  --accent:     #5b8db8;
+  --accent-strong: #47799f;
   --line-dark:  rgba(255,255,255,.09);
   --line-light: rgba(19,20,22,.1);
   --font-title: 'Archivo', 'Arial Narrow', sans-serif;
@@ -48,6 +50,8 @@ ul { list-style: none; }
   margin: 0 auto;
   padding: 0 24px;
 }
+
+.text-accent { color: var(--accent); }
 
 /* ---------- TYPOGRAPHY HELPERS ---------- */
 .section-label {
@@ -441,7 +445,7 @@ ul { list-style: none; }
   margin-top: 18px;
   font-size: .85rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--accent);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -452,7 +456,52 @@ ul { list-style: none; }
   font-weight: 400;
   transition: transform var(--transition);
 }
+.card__cta:hover { color: var(--white); }
 .card__cta:hover::after { transform: translateX(4px); }
+
+/* =====================================================
+   MANIFESTO
+   ===================================================== */
+.manifesto {
+  background: var(--graphite);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 120px 0;
+}
+.manifesto__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.manifesto__label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.manifesto__text {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+  line-height: 1.18;
+  text-transform: uppercase;
+  letter-spacing: -.005em;
+  color: var(--white);
+  text-wrap: balance;
+}
+.manifesto__text em { font-style: normal; color: var(--accent); }
+.manifesto__origin {
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
 
 /* =====================================================
    BENEFÍCIOS
@@ -721,7 +770,7 @@ ul { list-style: none; }
   color: var(--gray);
   transition: transform .25s ease, color .25s ease;
 }
-.faq__item[open] summary::after { transform: translateY(-50%) rotate(45deg); color: var(--ink); }
+.faq__item[open] summary::after { transform: translateY(-50%) rotate(45deg); color: var(--accent); }
 
 .faq__item p {
   padding: 0 40px 22px 0;
@@ -730,7 +779,7 @@ ul { list-style: none; }
   line-height: 1.7;
   max-width: 62ch;
 }
-.faq__item p a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.faq__item p a { color: var(--accent-strong); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* =====================================================
    CONTATO
