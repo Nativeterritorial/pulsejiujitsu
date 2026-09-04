@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse Martial Arts | Nova Prata – RS</title>
+<meta name="description" content="Pulse Martial Arts Nova Prata — Muay Thai e Boxe. Técnica, disciplina e evolução. Rua João Pessoa, 56 – Centro. Agende sua aula gratuita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --black:#0a0a0a;
+  --dark:#111;
+  --card:#161616;
+  --border:rgba(255,255,255,0.07);
+  --white:#ffffff;
+  --muted:rgba(255,255,255,0.42);
+  --orange:#e8720c;
+  --orange2:#f08020;
+  --red:#c0392b;
+  --orange-dim:rgba(232,114,12,0.08);
+  --orange-border:rgba(232,114,12,0.28);
+}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 48px;
+  background:rgba(10,10,10,0.93);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+
+.nav-p{
+  width:36px;height:36px;
+  background:var(--orange);border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:18px;color:var(--white);
+}
+
+.nav-name{display:flex;flex-direction:column;line-height:1.15}
+
+.nav-pulse{
+  font-family:'Oswald',sans-serif;
+  font-weight:600;font-size:16px;letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+
+.nav-sub{
+  font-size:9px;letter-spacing:0.25em;
+  text-transform:uppercase;color:var(--orange);font-weight:400;
+}
+
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:13px;letter-spacing:0.06em;transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+
+.nav-cta{
+  background:var(--orange);color:var(--white);
+  padding:9px 22px;border-radius:2px;
+  text-decoration:none;font-size:12px;
+  font-weight:600;letter-spacing:0.08em;
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--orange2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:120px 48px 80px;
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%,rgba(232,114,12,0.06) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 40% at 20% 70%,rgba(192,57,43,0.05) 0%,transparent 60%);
+  background-color:var(--black);
+}
+
+/* diagonal slashes */
+.hero-slash1{
+  position:absolute;top:0;right:-8%;
+  width:45%;height:100%;
+  background:linear-gradient(135deg,transparent 40%,rgba(232,114,12,0.025) 40%);
+  pointer-events:none;
+}
+.hero-slash2{
+  position:absolute;bottom:0;left:-5%;
+  width:30%;height:60%;
+  border-right:2px solid rgba(232,114,12,0.1);
+  transform:skewX(-6deg);
+  pointer-events:none;
+}
+
+.hero-content{position:relative;z-index:2;max-width:900px}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--orange-dim);
+  border:1px solid var(--orange-border);
+  color:var(--orange);
+  font-size:11px;letter-spacing:0.22em;
+  text-transform:uppercase;
+  padding:6px 20px;border-radius:100px;
+  margin-bottom:32px;
+  animation:fadeUp .7s ease both;
+}
+
+.hero-badge::before{
+  content:'';width:6px;height:6px;
+  border-radius:50%;background:var(--orange);
+  animation:blink 2s infinite;
+}
+
+@keyframes blink{
+  0%,100%{opacity:1}50%{opacity:.3}
+}
+
+.hero-eyebrow{
+  font-family:'Oswald',sans-serif;
+  font-weight:300;font-size:clamp(16px,2vw,22px);
+  letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:12px;
+  animation:fadeUp .7s .05s ease both;
+}
+
+.hero-title{
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  font-size:clamp(70px,13vw,155px);
+  line-height:0.88;
+  letter-spacing:0.01em;
+  text-transform:uppercase;
+  animation:fadeUp .7s .1s ease both;
+}
+
+.hero-title .outline{
+  -webkit-text-stroke:2px rgba(255,255,255,0.6);
+  color:transparent;
+}
+
+.hero-title .accent{color:var(--orange)}
+
+.hero-divider{
+  width:60px;height:3px;
+  background:var(--orange);
+  margin:28px auto;
+  animation:fadeUp .7s .18s ease both;
+}
+
+.hero-sub{
+  max-width:480px;margin:0 auto;
+  color:var(--muted);font-size:17px;line-height:1.7;
+  animation:fadeUp .7s .22s ease both;
+}
+
+.hero-actions{
+  display:flex;gap:14px;justify-content:center;
+  margin-top:40px;flex-wrap:wrap;
+  animation:fadeUp .7s .3s ease both;
+}
+
+.btn-primary{
+  background:var(--orange);color:var(--white);
+  padding:15px 36px;border-radius:2px;
+  text-decoration:none;font-weight:600;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  font-family:'Oswald',sans-serif;
+  transition:background .2s,transform .15s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+
+.btn-ghost{
+  border:1px solid rgba(255,255,255,0.18);color:var(--muted);
+  padding:15px 36px;border-radius:2px;
+  text-decoration:none;font-size:14px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  font-family:'Oswald',sans-serif;font-weight:400;
+  transition:border-color .2s,color .2s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:var(--white)}
+
+.hero-modalities{
+  display:flex;gap:0;justify-content:center;
+  margin-top:72px;
+  border:1px solid var(--border);border-radius:2px;
+  overflow:hidden;max-width:440px;
+  margin-left:auto;margin-right:auto;
+  animation:fadeUp .7s .4s ease both;
+}
+
+.mod-item{
+  flex:1;padding:22px 20px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.mod-item:last-child{border-right:none}
+
+.mod-icon{font-size:28px;margin-bottom:8px}
+
+.mod-name{
+  font-family:'Oswald',sans-serif;font-weight:600;
+  font-size:16px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--orange);
+}
+
+.mod-desc{font-size:11px;color:var(--muted);letter-spacing:0.06em;margin-top:3px}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── SECTION BASE ── */
+.section-label{
+  font-size:11px;letter-spacing:0.25em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:12px;
+}
+
+.section-title{
+  font-family:'Oswald',sans-serif;
+  font-weight:700;text-transform:uppercase;
+  font-size:clamp(36px,5vw,64px);line-height:0.95;
+}
+
+.section-divider{
+  width:50px;height:3px;background:var(--orange);margin:18px 0;
+}
+
+.section-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.section-header .section-divider{margin:18px auto}
+.section-header p{color:var(--muted);margin-top:14px;font-size:16px;line-height:1.7}
+
+/* ── SOBRE ── */
+#sobre{
+  padding:100px 48px;
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+
+.sobre-text p{
+  color:var(--muted);font-size:16px;
+  margin-bottom:18px;line-height:1.75;
+}
+.sobre-text strong{color:var(--white);font-weight:500}
+
+.sobre-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:3px;padding:48px 40px;
+  text-align:center;position:relative;overflow:hidden;
+}
+
+.sobre-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--orange));
+}
+
+.sobre-card::after{
+  content:'PULSE';
+  position:absolute;bottom:-20px;right:-10px;
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:100px;color:rgba(232,114,12,0.04);
+  line-height:1;pointer-events:none;
+}
+
+.sobre-emblem{
+  width:80px;height:80px;border-radius:50%;
+  background:var(--orange);
+  display:grid;place-items:center;
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:36px;color:var(--white);
+  margin:0 auto 20px;
+}
+
+.sobre-card-title{
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:14px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:6px;
+}
+
+.sobre-card-name{
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:42px;text-transform:uppercase;line-height:1;
+  margin-bottom:4px;
+}
+
+.sobre-card-city{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:28px;
+}
+
+.sobre-insta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--orange-dim);border:1px solid var(--orange-border);
+  color:var(--orange);padding:10px 20px;border-radius:2px;
+  text-decoration:none;font-size:13px;
+  font-family:'Oswald',sans-serif;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  transition:background .2s;
+}
+.sobre-insta:hover{background:rgba(232,114,12,0.15)}
+
+.profs-list{margin-top:28px;text-align:left}
+.profs-label{
+  font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;
+}
+.prof-item{
+  display:flex;align-items:center;gap:14px;
+  padding:13px 0;border-bottom:1px solid var(--border);
+}
+.prof-item:last-child{border-bottom:none}
+.prof-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--orange);
+  display:grid;place-items:center;
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:14px;color:var(--white);flex-shrink:0;
+}
+.prof-name{font-size:15px;font-weight:500}
+.prof-role{font-size:12px;color:var(--muted)}
+
+/* ── MODALIDADES ── */
+#modalidades{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:100px 48px;
+}
+
+.modal-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:24px;max-width:1000px;margin:0 auto;
+}
+
+.modal-card{
+  background:var(--black);
+  border:1px solid var(--border);
+  border-radius:3px;padding:48px 40px;
+  position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+
+.modal-card:hover{border-color:var(--orange-border);transform:translateY(-3px)}
+
+.modal-card::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:3px;
+  background:var(--orange);
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .35s;
+}
+.modal-card:hover::before{transform:scaleY(1)}
+
+.modal-icon{font-size:40px;margin-bottom:20px}
+
+.modal-card h3{
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(36px,5vw,52px);text-transform:uppercase;
+  line-height:1;margin-bottom:16px;
+  color:var(--white);
+}
+
+.modal-card h3 span{color:var(--orange)}
+
+.modal-card p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:20px}
+
+.modal-items{list-style:none;display:flex;flex-direction:column;gap:8px}
+.modal-items li{
+  font-size:14px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;
+}
+.modal-items li::before{
+  content:'';width:6px;height:6px;
+  border-radius:50%;background:var(--orange);flex-shrink:0;
+}
+
+/* ── HORÁRIOS ── */
+#horarios{
+  padding:100px 48px;
+  max-width:1000px;margin:0 auto;
+}
+
+.horarios-tabs{
+  display:flex;gap:0;
+  margin-bottom:40px;
+  border:1px solid var(--border);
+  border-radius:2px;overflow:hidden;
+  max-width:400px;
+}
+
+.tab-btn{
+  flex:1;padding:12px;
+  background:var(--dark);color:var(--muted);
+  border:none;cursor:pointer;
+  font-family:'Oswald',sans-serif;font-weight:500;
+  font-size:14px;letter-spacing:0.1em;text-transform:uppercase;
+  transition:background .2s,color .2s;
+  border-right:1px solid var(--border);
+}
+.tab-btn:last-child{border-right:none}
+.tab-btn.active{background:var(--orange);color:var(--white)}
+.tab-btn:hover:not(.active){background:var(--card);color:var(--white)}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.table-wrap{overflow-x:auto}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+
+th{
+  background:var(--dark);padding:13px 10px;text-align:center;
+  font-family:'Oswald',sans-serif;font-weight:500;
+  font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border);
+}
+th.th-h{color:var(--orange)}
+
+td{
+  padding:13px 10px;text-align:center;
+  border:1px solid var(--border);color:var(--muted);
+  font-size:12px;letter-spacing:0.04em;
+}
+td.hora{
+  font-family:'Oswald',sans-serif;font-weight:600;
+  font-size:20px;color:var(--orange);
+  background:rgba(232,114,12,0.04);
+  white-space:nowrap;
+}
+td.filled{background:rgba(232,114,12,0.06);color:var(--white);font-weight:500}
+td.kids{background:rgba(232,114,12,0.04);color:var(--orange);font-style:italic}
+td.init{
+  background:rgba(192,57,43,0.06);
+  color:#e07060;font-style:italic;font-size:11px;
+}
+
+.schedule-note{
+  margin-top:16px;font-size:12px;
+  color:var(--muted);font-style:italic;
+}
+
+/* ── BENEFÍCIOS ── */
+#beneficios{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  padding:100px 48px;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px;background:var(--border);
+  max-width:1140px;margin:60px auto 0;
+  border:1px solid var(--border);border-radius:2px;overflow:hidden;
+}
+
+.benefit{
+  background:var(--black);padding:36px 26px;
+  transition:background .2s;
+}
+.benefit:hover{background:var(--card)}
+
+.benefit-icon{font-size:26px;margin-bottom:14px}
+
+.benefit h4{
+  font-family:'Oswald',sans-serif;font-weight:600;
+  font-size:16px;text-transform:uppercase;
+  letter-spacing:0.05em;margin-bottom:8px;color:var(--white);
+}
+.benefit p{color:var(--muted);font-size:13px;line-height:1.6}
+
+/* ── CTA ── */
+#cta{padding:0 48px 100px}
+
+.cta-inner{
+  max-width:1140px;margin:0 auto;
+  background:linear-gradient(135deg,var(--red) 0%,var(--orange) 100%);
+  border-radius:3px;padding:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;position:relative;overflow:hidden;
+}
+
+.cta-inner::before{
+  content:'MARTIAL ARTS';
+  position:absolute;right:-20px;top:50%;
+  transform:translateY(-50%);
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:90px;color:rgba(0,0,0,0.1);
+  line-height:1;pointer-events:none;white-space:nowrap;
+}
+
+.cta-text .section-label{color:rgba(255,255,255,0.65)}
+.cta-text h2{
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(32px,4vw,56px);text-transform:uppercase;
+  line-height:0.95;color:var(--white);margin:8px 0 12px;
+}
+.cta-text p{color:rgba(255,255,255,0.75);max-width:420px;font-size:15px}
+
+.cta-actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+
+.btn-white{
+  background:var(--white);color:var(--orange);
+  padding:15px 32px;border-radius:2px;
+  text-decoration:none;font-weight:700;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  font-family:'Oswald',sans-serif;
+  transition:background .2s;text-align:center;
+}
+.btn-white:hover{background:#f0f0f0}
+
+.btn-outline-white{
+  border:2px solid rgba(255,255,255,0.5);color:var(--white);
+  padding:13px 32px;border-radius:2px;
+  text-decoration:none;font-size:14px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  font-family:'Oswald',sans-serif;font-weight:400;
+  transition:border-color .2s;text-align:center;
+}
+.btn-outline-white:hover{border-color:var(--white)}
+
+/* ── CONTATO ── */
+#contato{
+  padding:100px 48px;
+  max-width:1140px;margin:0 auto;
+}
+
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;margin-top:60px;align-items:start;
+}
+
+label{
+  display:block;font-size:11px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+
+input,select,textarea{
+  width:100%;background:var(--dark);
+  border:1px solid var(--border);border-radius:2px;
+  padding:13px 16px;color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:15px;font-weight:300;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;
+}
+input:focus,select:focus,textarea:focus{border-color:rgba(232,114,12,0.5)}
+select option{background:#1a1a1a}
+textarea{resize:vertical;min-height:90px}
+.form-group{margin-bottom:18px}
+
+.form-submit{
+  width:100%;background:var(--orange);color:var(--white);
+  border:none;padding:15px;border-radius:2px;
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:16px;letter-spacing:0.1em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;margin-top:4px;
+}
+.form-submit:hover{background:var(--orange2)}
+
+.contact-info{display:flex;flex-direction:column;gap:28px}
+
+.info-block{display:flex;gap:16px;align-items:flex-start}
+
+.info-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:var(--orange-dim);border:1px solid var(--orange-border);
+  border-radius:2px;display:grid;place-items:center;font-size:18px;
+}
+
+.info-label{
+  font-size:10px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:4px;
+}
+.info-val{color:var(--white);font-size:15px;line-height:1.5}
+.info-val a{color:var(--white);text-decoration:none}
+.info-val a:hover{color:var(--orange)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);border-top:1px solid var(--border);
+  padding:48px;
+}
+
+.footer-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+}
+
+.footer-brand{display:flex;align-items:center;gap:12px}
+
+.footer-p{
+  width:32px;height:32px;background:var(--orange);border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:16px;color:var(--white);
+}
+
+.footer-name{
+  font-family:'Oswald',sans-serif;font-weight:600;
+  font-size:14px;letter-spacing:0.08em;text-transform:uppercase;
+}
+
+.footer-sub{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange)}
+
+.footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+
+.footer-copy{font-size:12px;color:var(--muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  #hero{padding:100px 24px 60px}
+  #sobre{grid-template-columns:1fr;gap:48px;padding:72px 24px}
+  #modalidades{padding:72px 24px}
+  .modal-grid{grid-template-columns:1fr}
+  #horarios{padding:72px 24px}
+  #beneficios{padding:72px 24px}
+  #cta{padding:0 24px 72px}
+  .cta-inner{flex-direction:column;text-align:center;padding:48px 32px}
+  .cta-actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  #contato{padding:72px 24px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  footer{padding:32px 24px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <div class="nav-p">P</div>
+    <div class="nav-name">
+      <span class="nav-pulse">Pulse Martial Arts</span>
+      <span class="nav-sub">Nova Prata · RS</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#modalidades">Modalidades</a></li>
+    <li><a href="#horarios">Horários</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+
+  <a class="nav-cta" href="https://wa.me/5554996979829?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20aulas%20na%20Pulse%20Martial%20Arts!" target="_blank">Aula Grátis</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-slash1"></div>
+  <div class="hero-slash2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Nova Prata · RS · Artes Marciais</div>
+
+    <p class="hero-eyebrow">Pulse</p>
+
+    <h1 class="hero-title">
+      <span class="accent">MARTIAL</span><br>
+      <span class="outline">ARTS</span>
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-sub">Técnica, disciplina e evolução. Muay Thai e Boxe para todos os níveis em Nova Prata.</p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5554996979829?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Martial%20Arts!" target="_blank">
+        🥊 Agende sua Aula Grátis
+      </a>
+      <a class="btn-ghost" href="#modalidades">Ver Modalidades</a>
+    </div>
+
+    <div class="hero-modalities">
+      <div class="mod-item">
+        <div class="mod-icon">🥋</div>
+        <div class="mod-name">Muay Thai</div>
+        <div class="mod-desc">Arte das 8 armas</div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-icon">🥊</div>
+        <div class="mod-name">Boxe</div>
+        <div class="mod-desc">O esporte nobre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-text">
+    <p class="section-label">Quem somos</p>
+    <h2 class="section-title">Pulse<br><span style="color:var(--orange)">Martial Arts</span></h2>
+    <div class="section-divider"></div>
+    <p>A <strong>Pulse Martial Arts</strong> nasceu da mesma família da Pulse Jiu-Jitsu, trazendo para Nova Prata uma escola de artes marciais com foco em <strong>Muay Thai e Boxe</strong> — para quem quer aprender do zero ou elevar o nível do treino.</p>
+    <p>Com professores experientes e um ambiente seguro e profissional, a academia é aberta para <strong>todos os níveis</strong>, do iniciante ao competidor. Crianças, adultos e turmas específicas para cada objetivo.</p>
+    <p><strong>Rua João Pessoa, 56 — Centro, Nova Prata/RS.</strong></p>
+    <a class="sobre-insta" href="https://instagram.com/pulsemartialarts" target="_blank" style="margin-top:8px;display:inline-flex;">
+      📸 @pulsemartialarts →
+    </a>
+  </div>
+
+  <div>
+    <div class="sobre-card">
+      <div class="sobre-emblem">P</div>
+      <div class="sobre-card-title">Pulse</div>
+      <div class="sobre-card-name">Martial<br>Arts</div>
+      <div class="sobre-card-city">Nova Prata · RS</div>
+      <a class="sobre-insta" href="https://instagram.com/pulsemartialarts" target="_blank">📸 @pulsemartialarts</a>
+
+      <div class="profs-list">
+        <div class="profs-label">Equipe de professores</div>
+        <div class="prof-item">
+          <div class="prof-avatar">MM</div>
+          <div>
+            <div class="prof-name">Marcelo Maurer</div>
+            <div class="prof-role">Professor</div>
+          </div>
+        </div>
+        <div class="prof-item">
+          <div class="prof-avatar">LF</div>
+          <div>
+            <div class="prof-name">Luiz Figueira</div>
+            <div class="prof-role">Professor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades">
+  <div class="section-header">
+    <p class="section-label">O que ensinamos</p>
+    <h2 class="section-title">Nossas<br><span style="color:var(--orange)">Modalidades</span></h2>
+    <div class="section-divider"></div>
+    <p>Duas das mais completas artes marciais do mundo, ensinadas com técnica e dedicação.</p>
+  </div>
+
+  <div class="modal-grid">
+    <div class="modal-card">
+      <div class="modal-icon">🥋</div>
+      <h3>Muay<br><span>Thai</span></h3>
+      <p>A arte das 8 armas — punhos, cotovelos, joelhos e canelas. Esporte completo que desenvolve condicionamento físico, técnica e confiança em todos os níveis.</p>
+      <ul class="modal-items">
+        <li>Turmas para iniciantes e avançados</li>
+        <li>Turma Kids (Sexta 18h)</li>
+        <li>Treinos de Segunda a Sábado</li>
+        <li>Foco em técnica e condicionamento</li>
+      </ul>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-icon">🥊</div>
+      <h3>Boxe</h3>
+      <p>O esporte nobre. Desenvolve coordenação, reflexo, disciplina e condicionamento físico de forma progressiva e segura para praticantes de todos os níveis.</p>
+      <ul class="modal-items">
+        <li>Terça e Quinta às 20h30</li>
+        <li>Sábado às 14h</li>
+        <li>Técnica e sparring supervisionado</li>
+        <li>Ambiente profissional e seguro</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios">
+  <div class="section-header">
+    <p class="section-label">Quando treinar</p>
+    <h2 class="section-title">Quadro de<br><span style="color:var(--orange)">Horários</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="horarios-tabs">
+    <button class="tab-btn active" onclick="showTab('muaythai',this)">🥋 Muay Thai</button>
+    <button class="tab-btn" onclick="showTab('boxe',this)">🥊 Boxe</button>
+  </div>
+
+  <!-- MUAY THAI -->
+  <div class="tab-content active" id="tab-muaythai">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="th-h">Horário</th>
+            <th>SEG</th>
+            <th>TER</th>
+            <th>QUA</th>
+            <th>QUI</th>
+            <th>SEX</th>
+            <th>SÁB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hora">12h</td>
+            <td></td>
+            <td class="filled">Muay Thai</td>
+            <td></td>
+            <td class="filled">Muay Thai</td>
+            <td class="filled">Muay Thai</td>
+            <td class="filled">Muay Thai</td>
+          </tr>
+          <tr>
+            <td class="hora">12h20</td>
+            <td></td>
+            <td></td>
+            <td class="filled">Muay Thai</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="hora">16h</td>
+            <td class="filled">Muay Thai</td>
+            <td></td>
+            <td class="filled">Muay Thai</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="hora">18h</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kids">Kids</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="hora">19h30</td>
+            <td></td>
+            <td class="filled">Muay Thai</td>
+            <td class="filled">Muay Thai</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="hora">20h</td>
+            <td class="init">Iniciante</td>
+            <td></td>
+            <td></td>
+            <td class="init">Iniciante</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="schedule-note">Kids: turma especial para crianças · Iniciante: turma para quem está começando do zero</p>
+  </div>
+
+  <!-- BOXE -->
+  <div class="tab-content" id="tab-boxe">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="th-h">Horário</th>
+            <th>SEG</th>
+            <th>TER</th>
+            <th>QUA</th>
+            <th>QUI</th>
+            <th>SEX</th>
+            <th>SÁB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hora">14h</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="filled">Boxe</td>
+          </tr>
+          <tr>
+            <td class="hora">20h30</td>
+            <td></td>
+            <td class="filled">Boxe</td>
+            <td></td>
+            <td class="filled">Boxe</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="schedule-note" style="margin-top:20px">Horários sujeitos a alteração. Confirme no WhatsApp ou Instagram.</p>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section id="beneficios">
+  <div class="section-header">
+    <p class="section-label">Por que treinar?</p>
+    <h2 class="section-title">Benefícios das<br><span style="color:var(--orange)">Artes Marciais</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">💪</div>
+      <h4>Condicionamento</h4>
+      <p>Força, resistência e agilidade desenvolvidos de forma progressiva e funcional.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🧠</div>
+      <h4>Disciplina Mental</h4>
+      <p>Foco e resiliência que se refletem em todas as áreas da sua vida.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🛡️</div>
+      <h4>Defesa Pessoal</h4>
+      <p>Técnicas reais e eficazes para situações do cotidiano.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">⚡</div>
+      <h4>Reflexo e Coordenação</h4>
+      <p>Desenvolvimento motor completo através do treino técnico.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">😌</div>
+      <h4>Controle do Estresse</h4>
+      <p>Extravasar energia no tatame para voltar ao dia a dia mais leve.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">⭐</div>
+      <h4>Autoconfiança</h4>
+      <p>Supere seus limites e ganhe confiança real dentro e fora do ringue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <p class="section-label">Sem custo, sem compromisso</p>
+      <h2>Venha Treinar<br>Com a Gente</h2>
+      <p>Agende sua aula experimental gratuita e conheça o ambiente, a equipe e o método da Pulse Martial Arts.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn-white" href="https://wa.me/5554996979829?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Martial%20Arts!" target="_blank">
+        💬 WhatsApp
+      </a>
+      <a class="btn-outline-white" href="https://instagram.com/pulsemartialarts" target="_blank">
+        📸 Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="section-header">
+    <p class="section-label">Fale conosco</p>
+    <h2 class="section-title">Agende sua<br><span style="color:var(--orange)">Aula Gratuita</span></h2>
+    <div class="section-divider"></div>
+    <p>Preencha o formulário e entraremos em contato pelo WhatsApp para confirmar o horário.</p>
+  </div>
+
+  <div class="contact-grid">
+    <form onsubmit="handleForm(event)">
+      <div class="form-group">
+        <label>Seu nome</label>
+        <input type="text" id="nome" placeholder="Como você se chama?" required>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp</label>
+        <input type="tel" id="wpp" placeholder="(54) 9 9999-9999" required>
+      </div>
+      <div class="form-group">
+        <label>Modalidade de interesse</label>
+        <select id="turma" required>
+          <option value="" disabled selected>Selecione...</option>
+          <option>Muay Thai – Iniciante</option>
+          <option>Muay Thai – Avançado</option>
+          <option>Muay Thai – Kids</option>
+          <option>Boxe</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem (opcional)</label>
+        <textarea id="msg" placeholder="Dúvidas ou observações?"></textarea>
+      </div>
+      <button class="form-submit" type="submit">Quero minha aula grátis →</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-block">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Endereço</div>
+          <div class="info-val">Rua João Pessoa, 56<br>Centro – Nova Prata / RS</div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">📱</div>
+        <div>
+          <div class="info-label">WhatsApp</div>
+          <div class="info-val">
+            <a href="https://wa.me/5554996979829" target="_blank">(54) 9 9697-9829</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">📸</div>
+        <div>
+          <div class="info-label">Instagram</div>
+          <div class="info-val">
+            <a href="https://instagram.com/pulsemartialarts" target="_blank">@pulsemartialarts</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Funcionamento</div>
+          <div class="info-val">Seg–Sex: 12h – 21h<br>Sábado: 12h – 15h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa" style="padding:0 48px 100px;">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div style="margin-bottom:32px;">
+      <p class="section-label">Como chegar</p>
+      <h2 class="section-title">Nossa <span style="color:var(--orange)">Localização</span></h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--muted);font-size:15px;margin-top:8px;">Rua João Pessoa, 56 — Centro, Nova Prata / RS</p>
+    </div>
+    <div style="border-radius:3px;overflow:hidden;border:1px solid var(--border);position:relative;">
+      <iframe
+        src="https://maps.google.com/maps?q=Rua+Jo%C3%A3o+Pessoa,+56,+Nova+Prata,+RS,+Brasil&output=embed&z=17"
+        width="100%" height="380" style="border:0;display:block;filter:invert(90%) hue-rotate(180deg);"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:16px;flex-wrap:wrap;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+João+Pessoa,56,Nova+Prata,RS,Brasil" target="_blank" class="btn-primary" style="font-size:13px;padding:11px 24px;">
+        📍 Abrir no Google Maps
+      </a>
+      <a href="https://waze.com/ul?q=Rua+João+Pessoa+56+Nova+Prata+RS" target="_blank" class="btn-ghost" style="font-size:13px;padding:11px 24px;">
+        🚗 Abrir no Waze
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-p">P</div>
+      <div>
+        <div class="footer-name">Pulse Martial Arts</div>
+        <div class="footer-sub">Nova Prata · RS</div>
+      </div>
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#modalidades">Modalidades</a></li>
+      <li><a href="#horarios">Horários</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://pulsejiujitsu.com.br" target="_blank">Pulse Jiu-Jitsu</a></li>
+      <li><a href="https://pulsejiujitsu.com.br/nova-prata" target="_blank">Pulse Nova Prata</a></li>
+    </ul>
+
+    <div class="footer-copy">© 2026 Pulse Martial Arts · Nova Prata</div>
+  </div>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function handleForm(e) {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const turma = document.getElementById('turma').value;
+  const msg = document.getElementById('msg').value;
+  const text = encodeURIComponent(
+    `Olá! Meu nome é ${nome} e tenho interesse em: ${turma}.${msg ? ' ' + msg : ''} Gostaria de agendar uma aula experimental na Pulse Martial Arts!`
+  );
+  window.open(`https://wa.me/5554996979829?text=${text}`, '_blank');
+}
+</script>
+
+</body>
+</html>
