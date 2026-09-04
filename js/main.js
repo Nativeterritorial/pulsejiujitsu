@@ -93,6 +93,36 @@ const countObserver = new IntersectionObserver((entries) => {
 
 statNumbers.forEach(el => countObserver.observe(el));
 
+// ── Efeito de scroll na grade de horários ─────────────
+// Entra levemente menor e desfocada; ganha escala e foco
+// conforme se aproxima do centro da tela (como na referência).
+const horariosFx = document.getElementById('horariosFx');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (horariosFx && !reduceMotion) {
+  let ticking = false;
+
+  const updateFx = () => {
+    ticking = false;
+    const rect = horariosFx.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    const elCenter = rect.top + rect.height / 2;
+    const viewCenter = window.innerHeight / 2;
+    // 0 no centro da tela, 1 nas bordas
+    const t = Math.min(Math.abs(elCenter - viewCenter) / (window.innerHeight * 0.75), 1);
+    const scale = 1 - 0.06 * t;
+    const blur = 2.5 * Math.max(t - 0.35, 0);
+    horariosFx.style.transform = `scale(${scale.toFixed(3)})`;
+    horariosFx.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : 'none';
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateFx); }
+  }, { passive: true });
+  window.addEventListener('resize', updateFx, { passive: true });
+  updateFx();
+}
+
 // ── Smooth scroll for all anchor links ───────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {

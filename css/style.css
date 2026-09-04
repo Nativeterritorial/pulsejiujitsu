@@ -374,7 +374,7 @@ ul { list-style: none; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -650,6 +650,12 @@ ul { list-style: none; }
 
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; }
 
+/* Efeito de scroll na grade: entra levemente menor/desfocada e ganha foco no centro da tela */
+.horarios__fx { will-change: transform, filter; }
+@media (prefers-reduced-motion: reduce) {
+  .horarios__fx { transform: none !important; filter: none !important; }
+}
+
 .schedule {
   width: 100%;
   min-width: 640px;
@@ -702,8 +708,8 @@ ul { list-style: none; }
   letter-spacing: .02em;
   white-space: nowrap;
 }
-.pill--baby   { background: transparent; color: var(--ink); border: 1px solid rgba(19,20,22,.35); }
-.pill--kids   { background: #e2e3e5; color: #3c3f44; border: 1px solid transparent; }
+.pill--baby   { background: #fdeaee; color: #b93a52; border: 1px solid #f5c2cd; }
+.pill--kids   { background: #e3edf6; color: #35688f; border: 1px solid #bed5e8; }
 .pill--adulto { background: var(--ink); color: var(--white); border: 1px solid transparent; }
 
 .horarios__legend {
