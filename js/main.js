@@ -47,7 +47,7 @@ sections.forEach(sec => sectionObserver.observe(sec));
 
 // ── Scroll-in animation ───────────────────────────────
 const animateEls = document.querySelectorAll(
-  '.card, .beneficio, .team__card, .stat, .contato__item, .depoimento, .faq__item, .hero__portrait, .sobre__foto'
+  '.card, .beneficio, .team__card, .stat, .contato__item, .sobre__foto'
 );
 
 const fadeObserver = new IntersectionObserver((entries) => {
