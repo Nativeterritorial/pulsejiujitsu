@@ -719,6 +719,10 @@ ul { list-style: none; }
   align-items: center;
   font-size: .85rem;
 }
+.horarios__nota {
+  font-size: .8rem;
+  color: var(--gray);
+}
 
 /* =====================================================
    FAQ
