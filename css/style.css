@@ -201,7 +201,7 @@ ul { list-style: none; }
     linear-gradient(100deg, rgba(11,11,12,.96) 0%, rgba(11,11,12,.78) 55%, rgba(11,11,12,.55) 100%),
     linear-gradient(to top, rgba(11,11,12,.95) 0%, rgba(11,11,12,0) 35%),
     url('../images/hero-bg.webp') center 32%/cover no-repeat;
-  filter: grayscale(1);
+
   z-index: 0;
 }
 
@@ -340,10 +340,10 @@ ul { list-style: none; }
 .sobre__foto-img {
   width: 100%;
   border-radius: 10px;
-  filter: grayscale(1);
+
   transition: filter .4s ease;
 }
-.sobre__foto:hover .sobre__foto-img { filter: grayscale(0); }
+
 .sobre__foto-tag {
   position: absolute;
   left: 14px;
@@ -547,10 +547,10 @@ ul { list-style: none; }
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: grayscale(1);
-  transition: transform .45s ease, filter .45s ease;
+
+  transition: transform .45s ease;
 }
-.team__card:hover .team__photo { transform: scale(1.03); filter: grayscale(0); }
+.team__card:hover .team__photo { transform: scale(1.03); }
 
 .team__belt {
   position: absolute;
@@ -783,10 +783,10 @@ ul { list-style: none; }
   overflow: hidden;
   height: 480px;
   border: 1px solid var(--line-dark);
-  filter: grayscale(1);
+
   transition: filter .4s ease;
 }
-.contato__map:hover { filter: grayscale(0); }
+
 .contato__map iframe { width: 100%; height: 100%; border: 0; }
 
 /* =====================================================
