@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pulse Jiu-Jitsu – Academia de Jiu-Jitsu em Veranópolis/RS. Turmas para Baby, Kids, Adulto e Feminino. Venha treinar conosco!" />
+  <meta name="description" content="Pulse Jiu-Jitsu – Academia de Jiu-Jitsu em Veranópolis/RS. Turmas para Baby, Kids, Adulto e Feminino. Aula experimental gratuita!" />
   <meta name="keywords" content="jiu-jitsu, academia, veranópolis, RS, BJJ, Pulse, artes marciais" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pulsejiujitsu.com.br" />
   <meta property="og:title" content="Pulse Jiu-Jitsu – Veranópolis/RS" />
-  <meta property="og:description" content="Onde a transformação começa no tatame. Venha evoluir conosco." />
-  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:description" content="Onde a transformação começa no tatame. Aula experimental gratuita — Baby, Kids, Adulto e Feminino." />
+  <meta property="og:image" content="https://pulsejiujitsu.com.br/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Pulse Jiu-Jitsu | Veranópolis – RS</title>
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/hero-bg.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/hero-luiz.webp" fetchpriority="high" />
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
     "name": "Pulse Jiu-Jitsu",
-    "image": "https://pulsejiujitsu.com.br/images/logo.png",
+    "image": "https://pulsejiujitsu.com.br/images/og-image.jpg",
     "url": "https://pulsejiujitsu.com.br",
     "telephone": "+5554996446720",
     "priceRange": "$$",
@@ -53,6 +58,7 @@
           <li><a href="#modalidades" class="nav__link">Modalidades</a></li>
           <li><a href="#professores" class="nav__link">Professores</a></li>
           <li><a href="#horarios" class="nav__link">Horários</a></li>
+          <li><a href="#faq" class="nav__link">Dúvidas</a></li>
           <li><a href="#contato" class="nav__link nav__link--cta">Aula Grátis</a></li>
         </ul>
       </nav>
@@ -65,13 +71,29 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <div class="hero__bg"></div>
-    <div class="container hero__content">
-      <span class="hero__eyebrow">Veranópolis · RS · desde 2017</span>
-      <h1 class="hero__title">Onde a transformação<br><span class="text-red">começa no tatame.</span></h1>
-      <p class="hero__subtitle">Jiu-Jitsu para todas as idades — Baby, Kids, Adulto e Feminino.<br>Venha evoluir com a gente.</p>
-      <div class="hero__actions">
-        <a href="#contato" class="btn btn--red">Agende sua aula grátis</a>
-        <a href="#sobre" class="btn btn--outline">Conheça a academia</a>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Veranópolis · RS · desde 2017</span>
+        <h1 class="hero__title">Onde a transformação<br><span class="text-red">começa no tatame.</span></h1>
+        <p class="hero__subtitle">Jiu-Jitsu para todas as idades — Baby, Kids, Adulto e Feminino.<br>Venha evoluir com a gente.</p>
+        <div class="hero__actions">
+          <a href="https://wa.me/5554996446720?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Jiu-Jitsu!" target="_blank" rel="noopener" class="btn btn--red">Agende sua aula grátis</a>
+          <a href="#sobre" class="btn btn--outline">Conheça a academia</a>
+        </div>
+        <ul class="hero__badges">
+          <li>✔ Aula experimental gratuita</li>
+          <li>✔ Kimono emprestado na 1ª aula</li>
+          <li>✔ A partir dos 4 anos</li>
+        </ul>
+      </div>
+      <div class="hero__portrait">
+        <div class="hero__portrait-frame">
+          <img src="images/hero-luiz.webp" alt="Luiz Felipe Rigo – Head Coach da Pulse Jiu-Jitsu" width="720" height="900" fetchpriority="high" />
+        </div>
+        <div class="hero__portrait-tag">
+          <strong>Luiz Felipe Rigo</strong>
+          <span>Head Coach · Faixa Preta</span>
+        </div>
       </div>
     </div>
     <a href="#sobre" class="hero__scroll" aria-label="Rolar para baixo">
@@ -89,21 +111,22 @@
         <p>Hoje, com uma equipe de professores campeões e uma comunidade unida, somos referência em jiu-jitsu no Vale dos Vinhedos. Seja você um iniciante curioso ou um atleta experiente, aqui você encontra o ambiente certo para evoluir.</p>
         <div class="sobre__stats">
           <div class="stat">
-            <span class="stat__number">+8</span>
+            <span class="stat__number" data-count="8" data-prefix="+">+8</span>
             <span class="stat__label">Anos de história</span>
           </div>
           <div class="stat">
-            <span class="stat__number">6</span>
-            <span class="stat__label">Professores</span>
+            <span class="stat__number" data-count="7">7</span>
+            <span class="stat__label">Professores e instrutores</span>
           </div>
           <div class="stat">
-            <span class="stat__number">4</span>
+            <span class="stat__number" data-count="4">4</span>
             <span class="stat__label">Turmas</span>
           </div>
         </div>
       </div>
-      <div class="sobre__logo">
-        <img src="images/logo.png" alt="Pulse Jiu-Jitsu" class="sobre__logo-img" />
+      <div class="sobre__foto">
+        <img src="images/fachada.webp" alt="Fachada da Pulse Jiu-Jitsu em Veranópolis" class="sobre__foto-img" width="760" height="950" loading="lazy" />
+        <span class="sobre__foto-tag">📍 Rua Astério de Mello, 206 · Centro</span>
       </div>
     </div>
   </section>
@@ -125,6 +148,7 @@
             <li>Kids 1: 6 a 8 anos</li>
             <li>Kids 2: 9 a 12 anos</li>
           </ul>
+          <a href="https://wa.me/5554996446720?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20Kids%20na%20Pulse%20Jiu-Jitsu!" target="_blank" rel="noopener" class="card__cta">Agendar aula Kids →</a>
         </div>
 
         <div class="card">
@@ -137,6 +161,7 @@
             <li>Metodologia progressiva</li>
             <li>Ambiente acolhedor</li>
           </ul>
+          <a href="https://wa.me/5554996446720?text=Olá!%20Nunca%20treinei%20e%20quero%20agendar%20uma%20aula%20experimental%20na%20Pulse%20Jiu-Jitsu!" target="_blank" rel="noopener" class="card__cta">Começar do zero →</a>
         </div>
 
         <div class="card">
@@ -149,6 +174,7 @@
             <li>Sparring regulado</li>
             <li>Preparação para campeonatos</li>
           </ul>
+          <a href="https://wa.me/5554996446720?text=Olá!%20Já%20treino%20jiu-jitsu%20e%20quero%20conhecer%20a%20Pulse!" target="_blank" rel="noopener" class="card__cta">Conhecer a Pulse →</a>
         </div>
 
         <div class="card">
@@ -161,6 +187,7 @@
             <li>Condicionamento físico</li>
             <li>Comunidade feminina forte</li>
           </ul>
+          <a href="https://wa.me/5554996446720?text=Olá!%20Quero%20agendar%20uma%20aula%20experimental%20na%20turma%20Feminina%20da%20Pulse!" target="_blank" rel="noopener" class="card__cta">Agendar aula Feminina →</a>
         </div>
 
       </div>
@@ -215,11 +242,11 @@
 
       <div class="team__group">
         <h3 class="team__group-title">Professores</h3>
-        <div class="team team--3">
+        <div class="team team--4">
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <img src="images/prof-felipe.jpg" alt="Felipe Nadal" class="team__photo" loading="lazy" />
+              <img src="images/prof-felipe.webp" alt="Felipe Nadal" class="team__photo" width="640" height="800" loading="lazy" />
               <span class="team__belt team__belt--black">Faixa Preta</span>
             </div>
             <div class="team__info">
@@ -231,25 +258,37 @@
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <img src="images/prof-luiz.jpg" alt="Luiz Felipe Rigo" class="team__photo" loading="lazy" />
-              <span class="team__belt team__belt--brown">Faixa Marrom</span>
+              <img src="images/prof-luiz.webp" alt="Luiz Felipe Rigo" class="team__photo" width="640" height="800" loading="lazy" />
+              <span class="team__belt team__belt--black">Faixa Preta</span>
             </div>
             <div class="team__info">
               <h4 class="team__name">Luiz Felipe Rigo</h4>
-              <p class="team__role">Professor</p>
+              <p class="team__role">Proprietário &amp; Head Coach</p>
               <p class="team__bio">Multicampeão da arte suave. Campeão Pan-Americano e Sul-Americano pelo IBJJF. Referência técnica e esportiva da academia.</p>
             </div>
           </div>
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <img src="images/prof-marcos.jpg" alt="Marcos Rigo" class="team__photo" loading="lazy" />
+              <img src="images/prof-marcos.webp" alt="Marcos Rigo" class="team__photo" width="640" height="800" loading="lazy" />
               <span class="team__belt team__belt--black">Faixa Preta</span>
             </div>
             <div class="team__info">
               <h4 class="team__name">Marcos Rigo</h4>
               <p class="team__role">Professor</p>
               <p class="team__bio">Faixa-preta com vasta experiência no ensino do jiu-jitsu. Comprometido com o desenvolvimento técnico e humano de cada aluno.</p>
+            </div>
+          </div>
+
+          <div class="team__card">
+            <div class="team__photo-wrap">
+              <img src="images/prof-leonardo.webp" alt="Leonardo Bes" class="team__photo" width="640" height="800" loading="lazy" />
+              <span class="team__belt team__belt--black">Faixa Preta</span>
+            </div>
+            <div class="team__info">
+              <h4 class="team__name">Leonardo Bes</h4>
+              <p class="team__role">Professor</p>
+              <p class="team__bio">Faixa-preta que soma técnica e experiência ao time da Pulse, contribuindo para a evolução de cada aluno no tatame.</p>
             </div>
           </div>
 
@@ -262,7 +301,7 @@
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <img src="images/prof-fred.jpg" alt="Frederico Rampelotto" class="team__photo" loading="lazy" />
+              <img src="images/prof-fred.webp" alt="Frederico Rampelotto" class="team__photo" width="640" height="800" loading="lazy" />
               <span class="team__belt team__belt--blue">Faixa Azul</span>
             </div>
             <div class="team__info">
@@ -274,7 +313,7 @@
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <img src="images/prof-emanuele.jpg" alt="Emanuele Comin" class="team__photo" loading="lazy" />
+              <img src="images/prof-emanuele.webp" alt="Emanuele Comin" class="team__photo" width="640" height="800" loading="lazy" />
               <span class="team__belt team__belt--blue">Faixa Azul</span>
             </div>
             <div class="team__info">
@@ -286,7 +325,7 @@
 
           <div class="team__card">
             <div class="team__photo-wrap">
-              <div class="team__photo team__photo--placeholder">AG</div>
+              <img src="images/prof-artur.webp" alt="Artur Grapeggia" class="team__photo" width="640" height="800" loading="lazy" />
               <span class="team__belt team__belt--blue">Faixa Azul</span>
             </div>
             <div class="team__info">
@@ -388,6 +427,98 @@
     </div>
   </section>
 
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <span class="section-label section-label--light">O que dizem nossos alunos</span>
+      <h2 class="section-title section-title--light">Histórias Reais</h2>
+      <div class="depoimentos__grid">
+
+        <figure class="depoimento">
+          <div class="depoimento__stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote class="depoimento__texto">"Meu filho começou no Baby com 4 anos e hoje, com 7, já está no Kids 2. A evolução dele em disciplina e autoconfiança é impressionante. Os professores são incríveis com as crianças."</blockquote>
+          <figcaption class="depoimento__autor">
+            <span class="depoimento__avatar">CM</span>
+            <div>
+              <strong>Carla M.</strong>
+              <span>Mãe de aluno — Kids</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="depoimento">
+          <div class="depoimento__stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote class="depoimento__texto">"Comecei do zero aos 35 anos, sem nunca ter feito luta. O ambiente é super acolhedor, sem pressão. Em 6 meses já me sinto muito mais confiante dentro e fora do tatame."</blockquote>
+          <figcaption class="depoimento__autor">
+            <span class="depoimento__avatar">RS</span>
+            <div>
+              <strong>Roberto S.</strong>
+              <span>Aluno adulto iniciante</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="depoimento">
+          <div class="depoimento__stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote class="depoimento__texto">"A turma feminina é um espaço incrível. Aprendi defesa pessoal real, melhorei meu condicionamento e fiz amigas que levei pra vida. Recomendo muito para todas as mulheres."</blockquote>
+          <figcaption class="depoimento__autor">
+            <span class="depoimento__avatar">JP</span>
+            <div>
+              <strong>Juliana P.</strong>
+              <span>Aluna — Turma Feminina</span>
+            </div>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container faq__inner">
+      <div class="faq__head">
+        <span class="section-label">Dúvidas frequentes</span>
+        <h2 class="section-title">Antes da primeira aula</h2>
+        <p class="faq__desc">Ainda ficou alguma dúvida? Chama a gente no WhatsApp que respondemos na hora.</p>
+        <a href="https://wa.me/5554996446720?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20a%20Pulse%20Jiu-Jitsu!" target="_blank" rel="noopener" class="btn btn--red">Perguntar no WhatsApp</a>
+      </div>
+      <div class="faq__list">
+
+        <details class="faq__item">
+          <summary>Nunca treinei. Posso começar?</summary>
+          <p>Sim! Não precisa de nenhuma experiência. Temos turma dedicada para iniciantes e a aula experimental é gratuita justamente para você conhecer sem compromisso.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary>A aula experimental é paga?</summary>
+          <p>Não — a primeira aula é <strong>gratuita e sem compromisso</strong>. É só agendar pelo WhatsApp e aparecer.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary>Preciso ter kimono na primeira aula?</summary>
+          <p>Não precisa. A gente <strong>empresta o material</strong> na aula experimental. Venha de roupa confortável e traga uma garrafa de água.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary>A partir de que idade as crianças podem treinar?</summary>
+          <p>A partir dos <strong>4 anos</strong>, na turma Baby. As turmas são divididas por idade: Baby (4–5), Kids 1 (6–8) e Kids 2 (9–12).</p>
+        </details>
+
+        <details class="faq__item">
+          <summary>Como faço para agendar?</summary>
+          <p>É só chamar no WhatsApp <a href="https://wa.me/5554996446720" target="_blank" rel="noopener">(54) 99644-6720</a>. Somente a primeira aula precisa de agendamento — depois é só comparecer nos horários da grade.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary>Já treino em outra equipe e estou de passagem. Posso treinar?</summary>
+          <p>Claro! Visitantes são bem-vindos em qualquer horário da grade. Manda uma mensagem antes pra gente te receber bem.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CONTATO ===== -->
   <section class="contato" id="contato">
     <div class="container contato__inner">
@@ -462,6 +593,7 @@
           <li><a href="#modalidades">Modalidades</a></li>
           <li><a href="#professores">Professores</a></li>
           <li><a href="#horarios">Horários</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>

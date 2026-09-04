@@ -47,11 +47,11 @@ sections.forEach(sec => sectionObserver.observe(sec));
 
 // ── Scroll-in animation ───────────────────────────────
 const animateEls = document.querySelectorAll(
-  '.card, .beneficio, .team__card, .stat, .contato__item'
+  '.card, .beneficio, .team__card, .stat, .contato__item, .depoimento, .faq__item, .hero__portrait, .sobre__foto'
 );
 
 const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       // Staggered delay based on position among siblings
       const siblings = [...entry.target.parentElement.children];
@@ -67,6 +67,31 @@ animateEls.forEach(el => {
   el.classList.add('fade-in');
   fadeObserver.observe(el);
 });
+
+// ── Animated stat counters ────────────────────────────
+const statNumbers = document.querySelectorAll('.stat__number[data-count]');
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.count, 10);
+    const prefix = el.dataset.prefix || '';
+    const duration = 1200;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+
+statNumbers.forEach(el => countObserver.observe(el));
 
 // ── Smooth scroll for all anchor links ───────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
